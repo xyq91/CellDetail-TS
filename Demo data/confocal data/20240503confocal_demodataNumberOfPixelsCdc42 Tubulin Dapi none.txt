@@ -1,0 +1,4 @@
+Number of pixels per cell
+398547
+445224
+481317
