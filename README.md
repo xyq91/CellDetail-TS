@@ -16,4 +16,4 @@ Polarity quantification parameter P_n (absolute value of normalized dipole momen
 
 The manual can be found under
 
-Video tutorials can be found under
+Video tutorials can be found under https://github.com/xyq91/CellDetail-TS/releases/tag/CellDetail-Tutorial-Videos .
