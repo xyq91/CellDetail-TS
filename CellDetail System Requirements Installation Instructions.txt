@@ -1,0 +1,34 @@
+CellDetail
+
+System requirements: Windows or MAC; installed MATLAB Runtime (included in some installation packages) (https://de.mathworks.com/help/compiler/standalone-applications.html, https://de.mathworks.com/help/compiler/install-the-matlab-runtime.html)
+Versions the software has been tested on: Windows 10, Windows 11; MAC High Sierra, MAC Monterey
+Any required non-standard hardware: if usage of CellDetail_NatureCommunications240502final.m file directly in Matlab, make sure to have "images for CellDetail .m code" in the visible pathway of Matlab console
+(images included in .exe, mcr and .app files)
+
+Installation guide:
+instructions: Windows: double click on MyAppInstaller_web.exe file or extract and run MyAppInstaller_mcr. 
+Mac: double click on MyAppInstaller_web.app file or extract and run MyAppInstaller_mcr.app 
+typical install time on a "normal" desktop computer: 5-15 minutes
+
+Demo: Video CellDetail Tutorial part2.mp4 , 
+
+Demo data: folder "Confocal Tif", 
+Output data: folder "confocal data" and "confocal images"
+
+Instructions to run on data: Video CellDetail Tutorial part2.mp4, 
+
+Expected output: Manual in Supplementary File, output parameters,
+for demo data: folder "confocal data" and "confocal images"
+Expected run time for demo on a "normal" desktop computer:
+5-15 min
+
+Instructions for use / How to run the software on your data:
+Video CellDetail Tutorial part2.mp4 , 
+
+Manual in Supplementary File
+
+Replication instructions: 
+in Manuscript, under Section CellDetail
+in Video CellDetail Tutorial part2.mp4, 
+
+
