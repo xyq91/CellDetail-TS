@@ -8,7 +8,10 @@ Any required non-standard hardware: if usage of CellDetail_NatureCommunications2
 Installation guide:
 instructions: Windows: double click on MyAppInstaller_web.exe file or extract and run MyAppInstaller_mcr. 
 Mac: double click on MyAppInstaller_web.app file or extract and run MyAppInstaller_mcr.app 
+run as administrator!
+
 typical install time on a "normal" desktop computer: 5-15 minutes
+
 
 Demo: Video CellDetail Tutorial part2.mp4 , 
 
