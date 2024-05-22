@@ -17,3 +17,10 @@ Polarity quantification parameter P_n (absolute value of normalized dipole momen
 The manual can be found under https://github.com/xyq91/CellDetail-TS/blob/main/ManualCellDetail.pdf (in the repository).
 
 Video tutorials can be found under https://github.com/xyq91/CellDetail-TS/releases/tag/CellDetail-Tutorial-Videos .
+
+If you find CellDetail helpful and you use it for your science project/s, please cite this paper: 
+
+Schuster T, Amoah A, Marka G, Niemann J, Sacma M, Sakk V, Soller K, Vogel M, Vollmer A, Geiger H, 2024. Quantitative determination of changes in the1spatial distribution of components in single2cells with CellDetail.
+Research Square (preprint), https://www.researchsquare.com/article/rs-3205757/v1 .
+
+The manuscript of CellDetail is currently under revision. Updates will be made for the citation.
