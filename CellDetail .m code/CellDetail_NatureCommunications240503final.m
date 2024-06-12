@@ -440,7 +440,7 @@ voxel_z = efpixz.Value;
 % chosen (1) and (2)
 global bitsize14
 describ_bit14 = uicheckbox(p1, 'Position', [700, a(4)-370 70 20], 'Text', '14 bit', 'Value', 0, ...
-    'FontSize', 16);
+    'FontSize', 16, 'ValueChangedFcn', @(describ_bit14, event) describ_bit14_fct(describ_bit14, event));
 bitsize14 = describ_bit14.Value;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23372,6 +23372,7 @@ else
     end
 end
 
+maxval12
 
 pixel_vol = pixlength_x * pixlength_y * pixlength_z;
 M = zeros(b(1).Height, b(1).Width, length(stackstotake));
@@ -25781,7 +25782,12 @@ end
 
 
 
+function  describ_bit14_fct(describ_bit14, event)
+global bitsize14
 
+bitsize14 = describ_bit14.Value;
+
+end
 
 
 
