@@ -1234,13 +1234,13 @@ dropdownifgeneralqnormalization = uidropdown(p2b, 'Position', [320 a(4)-870 350 
     {'1) Charge normalized dependent on volume of cell (bit)', ...
     '2) Charge normalized dependent on protein distribution of cell (bit)', ...
     '3) Cell charge normalized corresponding to maximal value of charge multiplied by number of positive charges', ...
-    '4) Cell charge normalized corresponding to maximal value of charge multiplied by halved number of total charges', ...
-    '5) Cell charge normalized corresponding to mean value of charge multiplied by halved number of total charges', ...
+    '4) Cell charge normalized corresponding to maximal value of charge multiplied by halved number of total charges', ... 
     '6) Own max for each cell (else: dependent on bit)', ...
-    }, 'ItemsData', [1 2 3 4 5 6], ...
+    }, 'ItemsData', [1 2 3 4 6], ...
     'ValueChangedFcn', @(dropdownifgeneralqnormalization, event) ...
     dropdownifgeneralqnormalization_fcn(dropdownifgeneralqnormalization, event));
 buttongeneralqnormalization = dropdownifgeneralqnormalization.Value;
+  % '5) Cell charge normalized corresponding to mean value of charge multiplied by halved number of total charges', ...
 
 % Checkbox to save mask tiff images and cell detection images
 global saveimagesyes
@@ -1252,16 +1252,19 @@ saveimagesyes = checkifsaveimages.Value;
 
 % Checkbox to calculate and export all possible normalizations
 global buttonallnormalizations
-checkifallnormalizations = uicheckbox(p2b, 'Position', [50 a(4)-950 300 20], 'Value', 0,...
-    'Text', 'Calculate all normalization possibilities',...
-    'ValueChangedFcn', @(checkifallnormalizations, event) checkifallnormalizationsfcn(checkifallnormalizations));
-buttonallnormalizations = checkifallnormalizations.Value;
+buttonallnormalizations = 0; 
+% checkifallnormalizations = uicheckbox(p2b, 'Position', [50 a(4)-950 300 20], 'Value', 0,...
+%     'Text', 'Calculate all normalization possibilities',...
+%     'ValueChangedFcn', @(checkifallnormalizations, event) checkifallnormalizationsfcn(checkifallnormalizations));
+% buttonallnormalizations = checkifallnormalizations.Value;
 
 
 % Checkbox to normalize cell images to total intensity value = 1
 global buttoneachcellchargenormalizedcorrespondingtototalvalue1
-checkifownmask4 = uicheckbox(p2b, 'Position', [340 a(4)-950 200 20], 'Value', 0, 'Text', 'Cell total intensity normalized to 1');
-buttoneachcellchargenormalizedcorrespondingtototalvalue1 = checkifownmask4.Value;
+buttoneachcellchargenormalizedcorrespondingtototalvalue1 = 0;
+% checkifownmask4 = uicheckbox(p2b, 'Position', [340 a(4)-950 200 20], 'Value', 0, 'Text', 'Cell total intensity normalized to 1');
+% buttoneachcellchargenormalizedcorrespondingtototalvalue1 = checkifownmask4.Value;
+checkifownmask4 = 0; 
 
 % Checkbox to calculate Pearson's correlation coefficient
 global buttonPearson
@@ -1274,12 +1277,12 @@ buttonPearson = checkifpearson.Value;
 global buttoneachcellnormalizedtoaveragevalue1
 checkifownmask3 = uicheckbox(p2b, 'Position', [340 a(4)-925 300 50], 'Value', 0, 'Text', ...
     'Cell average intensity normalized to 1',...
-    'ValueChangedFcn', @(checkifownmask3, event) checkifownmaskfcn3(checkifownmask3, event, checkifownmask4));
+    'ValueChangedFcn', @(checkifownmask3, event) checkifownmaskfcn3(checkifownmask3, event)); %, checkifownmask4));
 buttoneachcellnormalizedtoaveragevalue1 = checkifownmask3.Value;
 
 % Function needing parameters of checkifownmask3 and checkifownmask4, thus
 % introduced separated from GUI element
-checkifownmask4.ValueChangedFcn = @(checkifownmask4, event) checkifownmaskfcn4(checkifownmask4, event, checkifownmask3);
+%checkifownmask4.ValueChangedFcn = @(checkifownmask4, event) checkifownmaskfcn4(checkifownmask4, event, checkifownmask3);
 
 % Checkbox to adapt advanced parameter settings for cell detection
 global buttonifadvanced
@@ -18400,30 +18403,30 @@ end
 
 
 % function: layers normalization of intensity according to average value
-function checkifownmaskfcn3(checkifownmask3, ~, checkifownmask4)
+function checkifownmaskfcn3(checkifownmask3, ~) %, checkifownmask4)
 global buttoneachcellnormalizedtoaveragevalue1 buttoneachcellchargenormalizedcorrespondingtototalvalue1
 buttoneachcellnormalizedtoaveragevalue1 = checkifownmask3.Value;
 
 if buttoneachcellnormalizedtoaveragevalue1
-    checkifownmask4.Value = 0;
+  %  checkifownmask4.Value = 0;
     buttoneachcellchargenormalizedcorrespondingtototalvalue1 = 0;
 else
 end
 
 end
 
-% function: layers normalization of intensity according to total value
-function checkifownmaskfcn4(checkifownmask4, ~, checkifownmask3)
-global buttoneachcellchargenormalizedcorrespondingtototalvalue1 buttoneachcellnormalizedtoaveragevalue1
-buttoneachcellchargenormalizedcorrespondingtototalvalue1  = checkifownmask4.Value;
-
-if buttoneachcellchargenormalizedcorrespondingtototalvalue1
-    checkifownmask3.Value = 0;
-    buttoneachcellnormalizedtoaveragevalue1 = 0;
-else
-end
-
-end
+% % function: layers normalization of intensity according to total value
+% function checkifownmaskfcn4(checkifownmask4, ~, checkifownmask3)
+% global buttoneachcellchargenormalizedcorrespondingtototalvalue1 buttoneachcellnormalizedtoaveragevalue1
+% buttoneachcellchargenormalizedcorrespondingtototalvalue1  = checkifownmask4.Value;
+% 
+% if buttoneachcellchargenormalizedcorrespondingtototalvalue1
+%     checkifownmask3.Value = 0;
+%     buttoneachcellnormalizedtoaveragevalue1 = 0;
+% else
+% end
+% 
+% end
 
 
 
